@@ -28,6 +28,7 @@ function getProductsData() {
 function addToCart(e) {
   const product = products.find((item) => item.Id === e.target.dataset.id);
   setLocalStorage('so-cart', product);
+  document.location='../cart.html'
 }
 
 getProductsData();
