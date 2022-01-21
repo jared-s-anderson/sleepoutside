@@ -219,32 +219,3 @@
     font-size: var(--small-font);
     padding: 1em;
   }
-
-  /* Banner */
-  .banner {
-      background-color: #009579;
-  }
-
-  .banner-content {
-      padding: 15px;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-  }
-
-  .banner-call {
-      flex-grow: 1;
-      line-height: 1.4;
-      font-family: 'Comics Sans MS', sans-serif;
-  }
-
-  .banner-dismiss {
-      cursor: pointer;
-      border: none;
-      background: none;
-  }
-
-  .banner-call, .banner-dismiss {
-      color: #ffffff;
-  }
