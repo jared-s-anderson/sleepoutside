@@ -248,3 +248,33 @@ footer {
 .banner-call, .banner-dismiss {
   color: #ffffff;
 }
+
+/* Newsletter */
+.newsletter {
+  background-color: #4392F1;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 30px;
+  max-width: 350px;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+.newsletter p {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 25px;
+}
+
+.newsletter input {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 25px;
+}
+
+.newsletter button {
+  cursor: pointer;
+  background-color: #8A89C0;
+  border: 2px solid black;
+  border-radius: 10px;
+}
