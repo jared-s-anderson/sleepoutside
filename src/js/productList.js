@@ -28,8 +28,9 @@ export default class ProductList {
 
     renderList(list) {
         //get the template
+        this.listElement.innerHTML = '';
         const template = document.getElementById('product-card-template');
-        console.log(template)
+        //console.log(template)
         renderListWithTemplate(template, this.listElement, list, this.prepareTemplate);
         
       }
