@@ -44,15 +44,15 @@ export function renderListWithTemplate(template, parent, list, callback) {
   })
 }
 
-export function renderWithTemplate(data, template, parent, callback) {
-  //get the template
-  let clone = template.content.cloneNode(true);
-
-  if (callback) {
-    clone = callback(clone, data);
-  } 
-  parent.appendChild(clone)
+export function renderWithTemplate(template, parent, data, callback) {
   
+  let clone = template.content.cloneNode(true);
+  if(callback) {
+  clone = callback(clone, data);
+  
+  }
+  parent.appendChild(clone);
+
 }
 
 export async function loadTemplate(path) {
