@@ -278,3 +278,15 @@ footer {
   border: 2px solid black;
   border-radius: 10px;
 }
+
+/* Superscript */
+
+.svg-background {
+  fill: red;
+}
+
+.svg-num {
+  fill: white;
+  font-family: sans-serif;
+  font-size: 40px;
+}
