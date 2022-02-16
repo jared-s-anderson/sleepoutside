@@ -301,3 +301,24 @@ footer {
 .product-categories {
   display: grid;
 }
+
+form label, form div {
+    /* displaflexock;
+    padding-top: 1rem; */
+    display: flex;
+    max-width: 200px;
+  
+}
+
+form fieldset {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: .5rem 2%;
+    color:black;
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+#form-title {
+  text-align: center;
+}

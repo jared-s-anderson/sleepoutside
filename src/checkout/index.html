@@ -12,7 +12,29 @@
     </header>
     <main class="divider">
       <section class="products">
-        <h2>Review & Place your Order</h2>
+        <h2 id="form-title">Review & Place your Order</h2>
+        <form action="#" id="checkout"> 
+          <fieldset>
+            <legend>Shipping</legend>
+            <label>First Name</label><input type="text" name="firstname" id="firstname" autocomplete="off" autocapitalize="on" required>
+            <label>Last Name</label><input type="text" name="lastname" id="lastname"autocomplete="off" autocapitalize="on" required>
+            <label>Street</label><input type="text" name="street" id="street" autocomplete="off" autocapitalize="on" required>
+            <label>City</label><input type="text" name="city" id="city" autocapitalize="on" required>
+            <label>State</label><input type="text" name="state" id="state" autocomplete="off" autocapitalize="on" required>
+            <label>Zip</label><input type="number" name="zip" id="zip" autocomplete="off" autocapitalize="on" required>
+          </fieldset>
+          <fieldset>
+            <legend>Payment</legend>
+            <label>Card Number</label><input type="tel" name="card_number" id="card_number" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+            <label>Expiration</label><input type="number" name="expiration" id="expiration" autocomplete="off" autocapitalize="on" required>
+            <label>Security Code</label><input type="number" name="securityCode" id="securityCode" autocomplete="off" maxlength="3" placeholder="xxx" required>
+          </fieldset>
+          <fieldset>
+            <legend>Order Summary</legend>
+            <section class="Order summary"></section>
+          </fieldset>
+          <input type="submit" value="Checkout">
+        </form>
       </section>
     </main>
     <footer id="main-footer"></footer>
