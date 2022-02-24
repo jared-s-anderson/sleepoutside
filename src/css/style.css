@@ -128,6 +128,24 @@ button {
   list-style-type: none;
   padding: 0;
 }
+
+.product-category {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  justify-content: center;
+  padding-left: 200px;
+  text-align: center;
+  justify-items: stretch;
+}
+
+.tent,
+.sleeping-bag,
+.backpack,
+.hammock {
+  padding: 10px;
+  align-self: center;
+}
+
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
@@ -236,7 +254,7 @@ footer {
 .banner-call {
   flex-grow: 1;
   line-height: 1.4;
-  font-family: 'Comics Sans MS', sans-serif;
+  font-family: "Comics Sans MS", sans-serif;
 }
 
 .banner-dismiss {
@@ -245,13 +263,14 @@ footer {
   background: none;
 }
 
-.banner-call, .banner-dismiss {
+.banner-call,
+.banner-dismiss {
   color: #ffffff;
 }
 
 /* Newsletter */
 .newsletter {
-  background-color: #4392F1;
+  background-color: #4392f1;
   text-align: center;
   margin: 0 auto;
   padding: 50px 30px;
@@ -274,9 +293,49 @@ footer {
 
 .newsletter button {
   cursor: pointer;
-  background-color: #8A89C0;
+  background-color: #8a89c0;
   border: 2px solid black;
   border-radius: 10px;
+}
+
+
+.product-categories {
+  display: grid;
+}
+
+form label, form div {
+    /* displaflexock;
+    padding-top: 1rem; */
+    display: flex;
+    max-width: 200px;
+  
+}
+
+form fieldset {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: .5rem 2%;
+    color:black;
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+#form-title {
+  text-align: center;
+}
+
+.checkout-summary > ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.checkout-summary li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-summary input {
+  width: 25%;
+  font-size: 1em;
 }
 
 /* Superscript */
