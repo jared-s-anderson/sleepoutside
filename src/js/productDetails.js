@@ -13,6 +13,10 @@ export default class ProductDetails {
     this.product = await this.dataSource.findProductById(this.productId);
     document.querySelector('main').innerHTML = this.renderProductDetails();
     // add listener to Add to Cart button
+    //document.getElementById('addToCart').addEventListener('click', (e) => {
+    //  const backpack = document.getElementById('backpack');
+    //  backpack.classList.addToCart('animate');
+    //})
     document.getElementById('addToCart')
             .addEventListener('click', this.addToCart.bind(this));
   }
@@ -35,7 +39,7 @@ export default class ProductDetails {
       src="${this.product.Image}"
       alt="${this.product.NameWithoutBrand}"
     />
-    <p class="product-card__price">$${this.product.FinalPrice}</p>
+    <p class="product-card__price">$<s>${this.product.FinalPrice}</s> $${this.product.FinalPrice - (this.product.FinalPrice * .2).toFixed(2)} <span class="flag-discount">20% Off</span></p>
     <p class="product__color">${this.product.Colors[0].ColorName}</p>
     <p class="product__description">
     ${this.product.DescriptionHtmlSimple}
