@@ -12,7 +12,48 @@
     </header>
     <main class="divider">
       <section class="products">
-        <h2>Review & Place your Order</h2>
+        <h2 id="form-title">Review & Place your Order</h2>
+        <form action="#" id="checkout"> 
+          <fieldset>
+            <legend>Shipping</legend>
+            <label>First Name</label><input type="text" name="fname"  id="firstname" autocomplete="off" autocapitalize="on" required>
+            <label>Last Name</label><input type="text" name="lname" id="lastname"autocomplete="off" autocapitalize="on" required>
+            <label>Street</label><input type="text" name="street" id="street" autocomplete="off" autocapitalize="on" required>
+            <label>City</label><input type="text" name="city" id="city" autocapitalize="on" required>
+            <label>State</label><input type="text" name="state" id="state" autocomplete="off" autocapitalize="on" required>
+            <label>Zip</label><input type="number" name="zip" id="zip" autocomplete="off" autocapitalize="on" required>
+          </fieldset>
+          <fieldset>
+            <legend>Payment</legend>
+            <label>Card Number</label><input type="tel" name="Cardnumber" id="card_number" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+            <label>Expiration</label><input type="number" name="expiration" id="expiration" autocomplete="off" autocapitalize="on" required>
+            <label>Security Code</label><input type="number" name="code" id="securityCode" autocomplete="off" maxlength="3" placeholder="xxx" required>
+          </fieldset>
+          <fieldset class="checkout-summary">
+            <legend>Order Summary</legend>
+            <ul>
+              <li>
+                <label for="cartTotal"
+                  >Item Subtotal(<span id="num-items"></span>)</label
+                >
+                <p name="cartTotal" id="cartTotal"></p>
+              </li>
+              <li>
+                <label for="shipping">Shipping Estimate</label>
+                <p id="shipping"></p>
+              </li>
+              <li>
+                <label for="tax">Tax</label>
+                <p id="tax"></p>
+              </li>
+              <li>
+                <label for="orderTotal"><b>Order Total</b></label>
+                <p id="orderTotal"></p>
+              </li>
+            </ul>
+          </fieldset>
+          <button id="checkoutSubmit" type="submit">Checkout</button>
+        </form>
       </section>
     </main>
     <footer id="main-footer"></footer>

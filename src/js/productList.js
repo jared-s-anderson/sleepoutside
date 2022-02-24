@@ -9,10 +9,13 @@ export default class ProductList {
     }
 
     async init(){
-        const productList = await this.dataSource.getData();
+
+        const productList = await this.dataSource.getData(this.category);
+
+        //const productList = await this.dataSource.getData();
         console.log(productList);
-        const filteredProductList = productList.filter(product => product.Id == '880RR' || product.Id == '985RF' || product.Id == '985PR' || product.Id == '344YJ')
-        this.renderList(filteredProductList);
+        //const filteredProductList = productList.filter(product => product.Id == '880RR' || product.Id == '985RF' || product.Id == '985PR' || product.Id == '344YJ')
+        this.renderList(productList);
     }
 
     prepareTemplate(template, product) {
