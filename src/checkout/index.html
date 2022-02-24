@@ -29,11 +29,30 @@
             <label>Expiration</label><input type="number" name="expiration" id="expiration" autocomplete="off" autocapitalize="on" required>
             <label>Security Code</label><input type="number" name="securityCode" id="securityCode" autocomplete="off" maxlength="3" placeholder="xxx" required>
           </fieldset>
-          <fieldset>
+          <fieldset class="checkout-summary">
             <legend>Order Summary</legend>
-            <section class="Order summary"></section>
+            <ul>
+              <li>
+                <label for="cartTotal"
+                  >Item Subtotal(<span id="num-items"></span>)</label
+                >
+                <p name="cartTotal" id="cartTotal"></p>
+              </li>
+              <li>
+                <label for="shipping">Shipping Estimate</label>
+                <p id="shipping"></p>
+              </li>
+              <li>
+                <label for="tax">Tax</label>
+                <p id="tax"></p>
+              </li>
+              <li>
+                <label for="orderTotal"><b>Order Total</b></label>
+                <p id="orderTotal"></p>
+              </li>
+            </ul>
           </fieldset>
-          <input type="submit" value="Checkout">
+          <button id="checkoutSubmit" type="submit">Checkout</button>
         </form>
       </section>
     </main>
