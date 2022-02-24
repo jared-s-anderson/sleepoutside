@@ -298,6 +298,7 @@ footer {
   border-radius: 10px;
 }
 
+
 .product-categories {
   display: grid;
 }
@@ -335,4 +336,16 @@ form fieldset {
 .checkout-summary input {
   width: 25%;
   font-size: 1em;
+}
+
+/* Superscript */
+
+.svg-background {
+  fill: red;
+}
+
+.svg-num {
+  fill: white;
+  font-family: sans-serif;
+  font-size: 40px;
 }
