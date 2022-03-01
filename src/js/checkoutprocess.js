@@ -40,7 +40,7 @@ export default class CheckoutProcess {
     }
     init() {
       this.list = getLocalStorage(this.key);
-      console.log(this.list)
+      // console.log(this.list)
       this.calculateItemSummary();
     }
     calculateItemSummary() {
@@ -98,10 +98,12 @@ export default class CheckoutProcess {
         json.tax = this.tax;
         json.shipping = this.shipping;
         json.items = packageItems(this.list);
+        console.log('Object to be sent')
         console.log(json);
         try {
           const res = await services.checkout(json);
           console.log(res);
+          document.location = '../checkout/checkedout.html';
         } catch (err) {
           console.log(err);
         }
