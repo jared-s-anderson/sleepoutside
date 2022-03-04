@@ -1,4 +1,5 @@
 import { loadHeaderFooter } from './utils.js';
+import ExternalServices from './ExternalServices.js';
 
 loadHeaderFooter();
 
@@ -19,7 +20,7 @@ export default class Admin {
       } 
       catch(err) {
         // remember this from before?
-        alertMessage(err.message.message);
+        console.log(err);
       }
     }
     showLogin(){
@@ -32,9 +33,39 @@ export default class Admin {
             <button id="login" type="submit">Login</button>
         </form>        
         </section>`;
-        document.querySelector('#login').addEventListener("click", this.login());
+        document.querySelector('#login').addEventListener("click", (e) => {
+            const email = document.querySelector('#email').value;
+            const password = document.querySelector('#password').value;
+            this.login({email, password}, this.showOrders.bind(this));
+        });
     }
+
+    async showOrders() {
+        console.log('Did we make it here')
+        try {
+          const orders = await this.services.getOrdersFromServer(this.token);
+          this.mainElement.innerHTML = orderHtml();
+          const parent = document.querySelector('#orders tbody');
+          // why not a template like we have done before?  The markup here was simple enough that I didn't think it worth the overhead...but a template would certainly work!
+          parent.innerHTML = orders.map(order=> `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString('en-US')}</td><td>${order.items.length}</td><td>${order.orderTotal}</td></tr>`).join('');
+        } catch(err) {
+          console.log(err);
+        }
+      }
+
+      
 }
+
+function orderHtml() {
+    return `<h2>Current Orders</h2>
+    <table id="orders">
+    <thead>
+    <tr><th>Id</th><th>Date</th><th>#Items</th><th>Total</th>
+    </thead>
+    <tbody class="order-body"></tbody>
+    </table>
+    `;
+  }
 
 const myadmin = new Admin()
 
